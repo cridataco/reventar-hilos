@@ -11,7 +11,7 @@ public class Info {
 
     public synchronized void addNumnber(int number){
         try {
-            while (used) {
+            while (!used) {
                 wait();
             }
         } catch (InterruptedException e) {

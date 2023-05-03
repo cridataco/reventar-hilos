@@ -20,7 +20,7 @@ public class DemoTreath {
         info.addNumnber(randomN);
     }
 
-    private void addRandomsNumbers(){
+    private synchronized void addRandomsNumbers(){
         boolean running = true;
         Thread thread = new Thread(new Runnable() {
             @Override
@@ -34,7 +34,7 @@ public class DemoTreath {
         thread.start();
     }
 
-    private void deleteRandomsNumbers(){
+    private synchronized void deleteRandomsNumbers(){
         boolean running = true;
         Random random = new Random();
         Thread thread = new Thread(new Runnable() {
@@ -49,7 +49,7 @@ public class DemoTreath {
         thread.start();
     }
 
-    private void showRandomsNumbers(){
+    private synchronized void showRandomsNumbers(){
         boolean running = true;
         Thread thread = new Thread(new Runnable() {
             @Override
